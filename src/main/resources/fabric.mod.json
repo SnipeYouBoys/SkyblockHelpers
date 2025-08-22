@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "skyblockhelpers",
+	"version": "${version}",
+	"name": "SkyblockHelpers",
+	"description": "Some Useful Helpers For Hypixel Skyblock",
+	"authors": [
+		"SnipeYouBoys"
+	],
+	"contact": {
+		"homepage": "https://github.com/SnipeYouBoys/SkyblockHelpers/",
+		"sources": "https://github.com/SnipeYouBoys/SkyblockHelpers/"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/skyblockhelpers/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.snipeyouboys.skyblockhelpers.SkyblockHelpers"
+		],
+		"client": [
+			"com.snipeyouboys.skyblockhelpers.Initialiser"
+		],
+		"modmenu": [
+        	"com.snipeyouboys.skyblockhelpers.ModMenuIntegration"
+    	]
+	},
+	"mixins": [
+		"skyblockhelpers.mixins.json",
+		{
+			"config": "skyblockhelpers.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

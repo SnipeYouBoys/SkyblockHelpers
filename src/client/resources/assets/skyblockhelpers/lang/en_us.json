@@ -1,0 +1,22 @@
+{
+  "title.skyblockhelpers.config": "SkyblockHelpers",
+  
+  "category.skyblockhelpers.pressurewarning": "PressureWarning",
+  "option.skyblockhelpers.pressurewarning.enabled": "Enabled",
+  "option.skyblockhelpers.pressurewarning.ylevel": "Y Level",
+
+  "category.skyblockhelpers.inventoryscale": "Inventory Scale",
+  "option.skyblockhelpers.inventoryscale.normalscale": "Normal Scale",
+  "option.skyblockhelpers.inventoryscale.containerscale": "Container Scale",
+
+  "category.skyblockhelpers.smallhand": "Small Hand",
+  "option.skyblockhelpers.smallhand.enabled": "Enabled",
+  "option.skyblockhelpers.smallhand.size": "Hand Size",
+
+  "category.skyblockhelpers.clock": "Clock",
+  "option.skyblockhelpers.clock.enabled": "Enabled",
+  "option.skyblockhelpers.clock.utcoffset": "UTC Offset",
+
+  "category.skyblockhelpers": "SkyblockHelpers",
+  "key.skyblockhelpers.findernewangle": "New Angle For Finder"
+}

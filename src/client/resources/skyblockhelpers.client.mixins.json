@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "com.snipeyouboys.skyblockhelpers.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"SmallHandMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
