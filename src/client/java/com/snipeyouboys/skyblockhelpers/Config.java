@@ -28,7 +28,7 @@ public class Config {
         ConfigCategory pressureWarning = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.pressurewarning"));
         
         pressureWarning.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.pressurewarning.enabled"), PressureWarning.enabled).setDefaultValue(true)
-        .setTooltip(Text.translatable("Wether PressureWarning Is Enabled")).setSaveConsumer(newValue -> PressureWarning.enabled = newValue).build()); // Builds the option entry for cloth config
+        .setTooltip(Text.translatable("Whether PressureWarning Is Enabled")).setSaveConsumer(newValue -> PressureWarning.enabled = newValue).build()); // Builds the option entry for cloth config
        
         pressureWarning.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.pressurewarning.ylevel"), PressureWarning.Y_Level, -64, 100).setDefaultValue(77)
         .setTooltip(Text.translatable("Y Level To Trigger PressureWarning At")).setSaveConsumer(newValue -> PressureWarning.Y_Level = newValue).build()); // Builds the option entry for cloth config
@@ -48,7 +48,7 @@ public class Config {
         ConfigCategory smallHand = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.smallhand"));
         
         smallHand.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.smallhand.enabled"), SmallHand.enabled).setDefaultValue(true)
-        .setTooltip(Text.translatable("Wether SmallHand Is Enabled")).setSaveConsumer(newValue -> SmallHand.enabled = newValue).build()); // Builds the option entry for cloth config
+        .setTooltip(Text.translatable("Whether SmallHand Is Enabled")).setSaveConsumer(newValue -> SmallHand.enabled = newValue).build()); // Builds the option entry for cloth config
        
         smallHand.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.smallhand.size"), SmallHand.size, 10, 100).setDefaultValue(50)
         .setTooltip(Text.translatable("The Size Of Your Hand")).setSaveConsumer(newValue -> SmallHand.size = newValue).build()); // Builds the option entry for cloth config
@@ -58,7 +58,7 @@ public class Config {
         ConfigCategory clock = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.clock"));
         
         clock.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.clock.enabled"), Clock.enabled).setDefaultValue(true)
-        .setTooltip(Text.translatable("Wether Clock Is Enabled")).setSaveConsumer(newValue -> Clock.enabled = newValue).build()); // Builds the option entry for cloth config
+        .setTooltip(Text.translatable("Whether Clock Is Enabled")).setSaveConsumer(newValue -> Clock.enabled = newValue).build()); // Builds the option entry for cloth config
        
         clock.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.clock.utcoffset"), Clock.utcOffset, -11, 12).setDefaultValue(0)
         .setTooltip(Text.translatable("What UTC Offset To Use For The Clock")).setSaveConsumer(newValue -> Clock.utcOffset = newValue).build()); // Builds the option entry for cloth config
