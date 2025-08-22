@@ -14,5 +14,7 @@ public class Initialiser implements ClientModInitializer {
 
 		Commands.init();
 		Keybinds.init();
+
+		Config.load();
 	}
 }

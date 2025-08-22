@@ -1,5 +1,7 @@
 package com.snipeyouboys.skyblockhelpers;
 
+import java.io.IOException;
+
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
@@ -10,12 +12,19 @@ import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import net.fabricmc.loader.api.FabricLoader;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 
 
 public class Config {
 
+    private static final Path CONFIG_FILE = FabricLoader.getInstance().getConfigDir().resolve("skyblockhelpers.json");
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    
     public static Screen createConfigScreen(Screen parent) {
         // Create the builder
         ConfigBuilder builder = ConfigBuilder.create()
@@ -68,8 +77,51 @@ public class Config {
         
         
         builder.setSavingRunnable(() -> {
-            //TODO add saving
+            save();
         });
         return builder.build();
+    }
+    
+    public static void load() {
+        if (!Files.exists(CONFIG_FILE)) return;
+        try {
+            String json = Files.readString(CONFIG_FILE);
+            SerializableConfig data = GSON.fromJson(json, SerializableConfig.class);
+
+            PressureWarning.enabled = data.pressureWarningEnabled;
+            PressureWarning.Y_Level = data.pressureWarningY;
+            InventoryScale.normalScale = data.inventoryNormalScale;
+            InventoryScale.customScale = data.inventoryCustomScale;
+            SmallHand.enabled = data.smallHandEnabled;
+            SmallHand.size = data.smallHandSize;
+            Clock.enabled = data.clockEnabled;
+            Clock.utcOffset = data.clockUTCOffset;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void save() {
+        try {
+            Files.createDirectories(CONFIG_FILE.getParent());
+
+            // Copy from helpers into serializable object
+            SerializableConfig data = new SerializableConfig();
+            data.pressureWarningEnabled = PressureWarning.enabled;
+            data.pressureWarningY = PressureWarning.Y_Level;
+            data.inventoryNormalScale = InventoryScale.normalScale;
+            data.inventoryCustomScale = InventoryScale.customScale;
+            data.smallHandEnabled = SmallHand.enabled;
+            data.smallHandSize = SmallHand.size;
+            data.clockEnabled = Clock.enabled;
+            data.clockUTCOffset = Clock.utcOffset;
+
+            String json = GSON.toJson(data);
+            Files.writeString(CONFIG_FILE, json);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
