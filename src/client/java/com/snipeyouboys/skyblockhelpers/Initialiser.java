@@ -8,13 +8,13 @@ import net.fabricmc.api.ClientModInitializer;
 public class Initialiser implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
+		//Helper Module Classes (not all have an init() )
 		PressureWarning.init();
 		InventoryScale.init();
 		Clock.init();
 
-		Commands.init();
+		//main classes (not all have init()s)
 		Keybinds.init();
-
 		Config.load();
 	}
 }

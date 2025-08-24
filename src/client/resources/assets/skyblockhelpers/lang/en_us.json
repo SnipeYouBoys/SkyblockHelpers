@@ -1,22 +1,46 @@
 {
   "title.skyblockhelpers.config": "SkyblockHelpers",
   
+
   "category.skyblockhelpers.pressurewarning": "PressureWarning",
+  
   "option.skyblockhelpers.pressurewarning.enabled": "Enabled",
+  "option.skyblockhelpers.pressurewarning.enabled.tooltip": "Whether Pressure Warning Is Enabled",
   "option.skyblockhelpers.pressurewarning.ylevel": "Y Level",
+  "option.skyblockhelpers.pressurewarning.ylevel.tooltip": "Y Level To Trigger At",
+  "option.skyblockhelpers.pressurewarning.volume": "Volume",
+  "option.skyblockhelpers.pressurewarning.volume.tooltip": "Volume Of Sound Warning",
+
+
 
   "category.skyblockhelpers.inventoryscale": "Inventory Scale",
+  
   "option.skyblockhelpers.inventoryscale.normalscale": "Normal Scale",
+  "option.skyblockhelpers.inventoryscale.normalscale.tooltip": "Normal Gameplay GUI Scale",
   "option.skyblockhelpers.inventoryscale.containerscale": "Container Scale",
+  "option.skyblockhelpers.inventoryscale.containerscale.tooltip": "Chest / Inventory GUI Scale",
+
+
 
   "category.skyblockhelpers.smallhand": "Small Hand",
+  
   "option.skyblockhelpers.smallhand.enabled": "Enabled",
+  "option.skyblockhelpers.smallhand.enabled.tooltip": "Whether SmallHand Is Enabled",
   "option.skyblockhelpers.smallhand.size": "Hand Size",
+  "option.skyblockhelpers.smallhand.size.tooltip": "The Size Of Your Hand / Held Item",
+
+
 
   "category.skyblockhelpers.clock": "Clock",
+  
   "option.skyblockhelpers.clock.enabled": "Enabled",
+  "option.skyblockhelpers.clock.enabled.tooltip": "Whether Clock Is Enabled",
   "option.skyblockhelpers.clock.utcoffset": "UTC Offset",
+  "option.skyblockhelpers.clock.utcoffset.tooltip": "What UTC Offset To Use For The Clock",
+
+
 
   "category.skyblockhelpers": "SkyblockHelpers",
+  
   "key.skyblockhelpers.findernewangle": "New Angle For Finder"
 }
