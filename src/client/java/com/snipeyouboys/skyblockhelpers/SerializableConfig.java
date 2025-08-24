@@ -3,6 +3,7 @@ package com.snipeyouboys.skyblockhelpers;
 public class SerializableConfig {
     boolean pressureWarningEnabled;
     int pressureWarningY;
+    int pressureWarningVol;
 
     int inventoryNormalScale;
     int inventoryCustomScale;

@@ -93,6 +93,7 @@ public class Config {
 
             PressureWarning.enabled = data.pressureWarningEnabled;
             PressureWarning.Y_Level = data.pressureWarningY;
+            PressureWarning.volume = data.pressureWarningVol;
             InventoryScale.normalScale = data.inventoryNormalScale;
             InventoryScale.customScale = data.inventoryCustomScale;
             SmallHand.enabled = data.smallHandEnabled;
@@ -113,6 +114,7 @@ public class Config {
             SerializableConfig data = new SerializableConfig();
             data.pressureWarningEnabled = PressureWarning.enabled;
             data.pressureWarningY = PressureWarning.Y_Level;
+            data.pressureWarningVol = PressureWarning.volume;
             data.inventoryNormalScale = InventoryScale.normalScale;
             data.inventoryCustomScale = InventoryScale.customScale;
             data.smallHandEnabled = SmallHand.enabled;
