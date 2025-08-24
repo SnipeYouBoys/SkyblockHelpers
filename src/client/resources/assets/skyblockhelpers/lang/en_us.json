@@ -40,6 +40,13 @@
 
 
 
+  "category.skyblockhelpers.cleantooltip": "Clean Tooltip",
+  
+  "option.skyblockhelpers.cleantooltip.enabled": "Enabled",
+  "option.skyblockhelpers.cleantooltip.enabled.tooltip": "Whether Clean Tooltip Is Enabled",
+
+
+
   "category.skyblockhelpers": "SkyblockHelpers",
   
   "key.skyblockhelpers.findernewangle": "New Angle For Finder"

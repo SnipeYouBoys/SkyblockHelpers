@@ -29,6 +29,11 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
+	runs {
+        client {
+            vmArgs "-Ddevauth.enabled=true"
+        }
+    }
 
 }
 

@@ -2,6 +2,7 @@ package com.snipeyouboys.skyblockhelpers;
 
 import java.io.IOException;
 
+import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
@@ -75,6 +76,11 @@ public class Config {
         clock.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.clock.utcoffset"), Clock.utcOffset, -11, 12).setDefaultValue(0)
         .setTooltip(Text.translatable("option.skyblockhelpers.clock.utcoffset.tooltip")).setSaveConsumer(newValue -> Clock.utcOffset = newValue).build());
 
+        ConfigCategory cleanTooltip = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.cleantooltip"));
+        
+        cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.enabled"), CleanTooltip.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.enabled.tooltip")).setSaveConsumer(newValue -> CleanTooltip.enabled = newValue).build());
+
 
         
         
@@ -100,6 +106,7 @@ public class Config {
             SmallHand.size = data.smallHandSize;
             Clock.enabled = data.clockEnabled;
             Clock.utcOffset = data.clockUTCOffset;
+            CleanTooltip.enabled = data.cleanTooltipEnabled;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -121,6 +128,7 @@ public class Config {
             data.smallHandSize = SmallHand.size;
             data.clockEnabled = Clock.enabled;
             data.clockUTCOffset = Clock.utcOffset;
+            data.cleanTooltipEnabled = CleanTooltip.enabled;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);
