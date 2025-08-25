@@ -44,6 +44,9 @@ public class CleanTooltip {
         drillFilterStrings.add("mining Blocks.");
         drillFilterStrings.add("minecraft:prismarine_shard");
         drillFilterStrings.add("component(s)");
+        drillFilterStrings.add("how quickly your tool");
+        drillFilterStrings.add("breaks blocks.");
+        drillFilterStrings.add("Durability");
         
         ItemTooltipCallback.EVENT.register((ItemStack stack, Item.TooltipContext ctx, TooltipType type, List<Text> lines) -> {
             if (!enabled) return;    
