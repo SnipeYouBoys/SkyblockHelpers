@@ -15,4 +15,6 @@ public class SerializableConfig {
     int clockUTCOffset;
 
     boolean cleanTooltipEnabled;
+    boolean cleanTooltipRemoveEmpty;
+    boolean cleanTooltipCleanDrills;
 }

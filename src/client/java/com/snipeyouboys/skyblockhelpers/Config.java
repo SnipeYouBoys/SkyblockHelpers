@@ -81,6 +81,12 @@ public class Config {
         cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.enabled"), CleanTooltip.enabled).setDefaultValue(true)
         .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.enabled.tooltip")).setSaveConsumer(newValue -> CleanTooltip.enabled = newValue).build());
 
+        cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.removeempty"), CleanTooltip.removeEmpty).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.removeempty.tooltip")).setSaveConsumer(newValue -> CleanTooltip.removeEmpty = newValue).build());
+
+        cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills"), CleanTooltip.cleanDrills).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills.tooltip")).setSaveConsumer(newValue -> CleanTooltip.cleanDrills = newValue).build());
+
 
         
         
@@ -107,6 +113,8 @@ public class Config {
             Clock.enabled = data.clockEnabled;
             Clock.utcOffset = data.clockUTCOffset;
             CleanTooltip.enabled = data.cleanTooltipEnabled;
+            CleanTooltip.removeEmpty = data.cleanTooltipRemoveEmpty;
+            CleanTooltip.cleanDrills = data.cleanTooltipCleanDrills;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -129,6 +137,8 @@ public class Config {
             data.clockEnabled = Clock.enabled;
             data.clockUTCOffset = Clock.utcOffset;
             data.cleanTooltipEnabled = CleanTooltip.enabled;
+            data.cleanTooltipRemoveEmpty = CleanTooltip.removeEmpty;
+            data.cleanTooltipCleanDrills = CleanTooltip.cleanDrills;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);
