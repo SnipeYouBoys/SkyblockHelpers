@@ -47,7 +47,7 @@
   "option.skyblockhelpers.cleantooltip.removeempty": "Remove Empty Lines",
   "option.skyblockhelpers.cleantooltip.removeempty.tooltip": "Whether To Remove Empty Tooltip Lines (alpha feature and may break other item tooltips)",
   "option.skyblockhelpers.cleantooltip.cleandrills": "Clean Drill Tooltips",
-  "option.skyblockhelpers.cleantooltip.cleandrills.tooltip": "Whether To Make Drill Tooltips Much Shorter (alpha feature and may break other item tooltips)",
+  "option.skyblockhelpers.cleantooltip.cleandrills.tooltip": "Whether To Make Drill Tooltips Much Shorter (alpha feature and may not work 100% of the time)",
 
 
 

@@ -18,8 +18,6 @@ public class CleanTooltip {
     private static final List<String> drillFilterStrings = new ArrayList<>();
 
     public static void init() {
-        drillFilterStrings.add("Fuel Tank");
-        drillFilterStrings.add("Drill Engine"); 
         drillFilterStrings.add("installed");
         drillFilterStrings.add("Drill Mechanic");
         drillFilterStrings.add("Upgrade Module");
@@ -47,17 +45,20 @@ public class CleanTooltip {
         drillFilterStrings.add("how quickly your tool");
         drillFilterStrings.add("breaks blocks.");
         drillFilterStrings.add("Durability");
+        drillFilterStrings.add("Ability");
         
         ItemTooltipCallback.EVENT.register((ItemStack stack, Item.TooltipContext ctx, TooltipType type, List<Text> lines) -> {
             if (!enabled) return;    
             
+            boolean isDrill = stack.getName().getString().contains("Drill");
+
             lines.removeIf(line -> {
                 String text = line.getString();
                 
                 if (text.isEmpty() && removeEmpty) return true;
                 
                 for (String filter : drillFilterStrings) {
-                    if (text.contains(filter) && cleanDrills) {
+                    if (text.contains(filter) && cleanDrills && isDrill) {
                         return true;
                     }
                 }
