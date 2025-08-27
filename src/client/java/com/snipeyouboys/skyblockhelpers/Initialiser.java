@@ -1,5 +1,6 @@
 package com.snipeyouboys.skyblockhelpers;
 
+import com.snipeyouboys.skyblockhelpers.Helpers.AutoSkyblock;
 import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
@@ -14,6 +15,7 @@ public class Initialiser implements ClientModInitializer {
 		InventoryScale.init();
 		Clock.init();
 		CleanTooltip.init();
+		AutoSkyblock.init();
 
 		//main classes (not all have init()s)
 		Keybinds.init();

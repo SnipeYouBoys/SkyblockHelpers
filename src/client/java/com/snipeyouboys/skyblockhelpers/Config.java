@@ -2,6 +2,7 @@ package com.snipeyouboys.skyblockhelpers;
 
 import java.io.IOException;
 
+import com.snipeyouboys.skyblockhelpers.Helpers.AutoSkyblock;
 import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
@@ -88,6 +89,13 @@ public class Config {
         .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills.tooltip")).setSaveConsumer(newValue -> CleanTooltip.cleanDrills = newValue).build());
 
 
+
+        ConfigCategory autoSkyblock = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.autoskyblock"));
+        
+        autoSkyblock.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.autoskyblock.enabled"), AutoSkyblock.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.autoskyblock.enabled.tooltip")).setSaveConsumer(newValue -> AutoSkyblock.enabled = newValue).build());
+
+
         
         
         
@@ -115,6 +123,7 @@ public class Config {
             CleanTooltip.enabled = data.cleanTooltipEnabled;
             CleanTooltip.removeEmpty = data.cleanTooltipRemoveEmpty;
             CleanTooltip.cleanDrills = data.cleanTooltipCleanDrills;
+            AutoSkyblock.enabled = data.autoSkyblockEnabled;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -139,6 +148,7 @@ public class Config {
             data.cleanTooltipEnabled = CleanTooltip.enabled;
             data.cleanTooltipRemoveEmpty = CleanTooltip.removeEmpty;
             data.cleanTooltipCleanDrills = CleanTooltip.cleanDrills;
+            data.autoSkyblockEnabled = AutoSkyblock.enabled;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);

@@ -17,4 +17,6 @@ public class SerializableConfig {
     boolean cleanTooltipEnabled;
     boolean cleanTooltipRemoveEmpty;
     boolean cleanTooltipCleanDrills;
+
+    boolean autoSkyblockEnabled;
 }
