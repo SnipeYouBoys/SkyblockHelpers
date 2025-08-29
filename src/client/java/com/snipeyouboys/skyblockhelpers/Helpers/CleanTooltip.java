@@ -46,6 +46,11 @@ public class CleanTooltip {
         drillFilterStrings.add("breaks blocks.");
         drillFilterStrings.add("Durability");
         drillFilterStrings.add("Ability");
+        drillFilterStrings.add("Bonus");
+        drillFilterStrings.add("Earn");
+        drillFilterStrings.add("Automatically smelts");
+        drillFilterStrings.add("smelted form");
+        drillFilterStrings.add("15s");
         
         ItemTooltipCallback.EVENT.register((ItemStack stack, Item.TooltipContext ctx, TooltipType type, List<Text> lines) -> {
             if (!enabled) return;    

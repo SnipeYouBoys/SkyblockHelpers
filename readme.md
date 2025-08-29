@@ -8,3 +8,4 @@ The mod currently only supports 1.21.5 fabric, although that may change eventual
 - InventoryScale: Allows for setting a different GUI scale for inventories.
 - PressureWarning: Warns you when reaching any given depth in water on galetea.
 - SmallHand: Allows you to change the scale of the hand / item model.
+- AutoSkyblock: Automatically joins skyblock when joining hypixel
