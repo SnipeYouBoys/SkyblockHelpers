@@ -3,7 +3,8 @@
 	"package": "com.snipeyouboys.skyblockhelpers.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"SmallHandMixin"
+		"SmallHandMixin",
+		"SlowHandMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

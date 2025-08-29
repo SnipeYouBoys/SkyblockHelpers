@@ -49,11 +49,21 @@
   "option.skyblockhelpers.cleantooltip.cleandrills": "Clean Drill Tooltips",
   "option.skyblockhelpers.cleantooltip.cleandrills.tooltip": "Whether To Make Drill Tooltips Much Shorter (alpha feature and may not work 100% of the time)",
 
+
+
   "category.skyblockhelpers.autoskyblock": "Auto Skyblock",
   
   "option.skyblockhelpers.autoskyblock.enabled": "Automatically Join Skyblock",
   "option.skyblockhelpers.autoskyblock.enabled.tooltip": "Automatically makes you join skyblock when joining hypixel",
 
+
+
+  "category.skyblockhelpers.slowhand": "Slow Hand",
+  
+  "option.skyblockhelpers.slowhand.enabled": "Slow The Hand Swing Animation",
+  "option.skyblockhelpers.slowhand.enabled.tooltip": "Makes the hand swing animation slower, as if you had mining fatigue",
+  "option.skyblockhelpers.slowhand.speed": "Speed",
+  "option.skyblockhelpers.slowhand.speed.tooltip": "What Speed the hand should swing at",
 
 
   "category.skyblockhelpers": "SkyblockHelpers",

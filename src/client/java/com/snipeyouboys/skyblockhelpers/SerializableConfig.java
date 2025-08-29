@@ -19,4 +19,7 @@ public class SerializableConfig {
     boolean cleanTooltipCleanDrills;
 
     boolean autoSkyblockEnabled;
+
+    boolean slowHandEnabled;
+    int slowHandSpeed;
 }

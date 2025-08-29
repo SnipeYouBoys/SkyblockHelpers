@@ -7,6 +7,7 @@ import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
+import com.snipeyouboys.skyblockhelpers.Helpers.SlowHand;
 import com.snipeyouboys.skyblockhelpers.Helpers.SmallHand;
 
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
@@ -96,6 +97,16 @@ public class Config {
         .setTooltip(Text.translatable("option.skyblockhelpers.autoskyblock.enabled.tooltip")).setSaveConsumer(newValue -> AutoSkyblock.enabled = newValue).build());
 
 
+
+        ConfigCategory slowHand = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.slowhand"));
+        
+        slowHand.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.slowhand.enabled"), SlowHand.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.slowhand.enabled.tooltip")).setSaveConsumer(newValue -> SlowHand.enabled = newValue).build());
+
+        slowHand.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.slowhand.speed"), SlowHand.speed, 5, 100).setDefaultValue(25)
+        .setTooltip(Text.translatable("option.skyblockhelpers.slowhand.speed.tooltip")).setSaveConsumer(newValue -> SlowHand.speed = newValue).build());
+
+
         
         
         
@@ -124,6 +135,8 @@ public class Config {
             CleanTooltip.removeEmpty = data.cleanTooltipRemoveEmpty;
             CleanTooltip.cleanDrills = data.cleanTooltipCleanDrills;
             AutoSkyblock.enabled = data.autoSkyblockEnabled;
+            SlowHand.enabled = data.slowHandEnabled;
+            SlowHand.speed = data.slowHandSpeed;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -149,6 +162,8 @@ public class Config {
             data.cleanTooltipRemoveEmpty = CleanTooltip.removeEmpty;
             data.cleanTooltipCleanDrills = CleanTooltip.cleanDrills;
             data.autoSkyblockEnabled = AutoSkyblock.enabled;
+            data.slowHandEnabled = SlowHand.enabled;
+            data.slowHandSpeed = SlowHand.speed;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);
