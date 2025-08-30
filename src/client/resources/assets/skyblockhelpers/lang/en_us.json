@@ -68,5 +68,6 @@
 
   "category.skyblockhelpers": "SkyblockHelpers",
   
-  "key.skyblockhelpers.findernewangle": "New Angle For Finder"
+  "key.skyblockhelpers.findernewangle": "New Angle For Finder",
+  "key.skyblockhelpers.lockmouse": "Lock/Unlock Player Rotation"
 }
