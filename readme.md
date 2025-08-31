@@ -10,4 +10,6 @@ The mod currently only supports 1.21.5 fabric, although that may change eventual
 - SmallHand: Allows you to change the scale of the hand / item model.
 - AutoSkyblock: Automatically joins skyblock when joining hypixel.
 - SlowHand: Allows you to slow the hand swing animation.
-- MouseLock: Allows you to lock your rotation (useful for farming).
+- MouseLock: Allows you to lock your rotation by pressing a hotkey (useful for farming).
+- E-Chest Hotkeys: Allows you to open any given echest page by pressing a hotkey.
+- Backpack Hotkeys: Allows you to open any given backpack slot by pressing a hotkey.

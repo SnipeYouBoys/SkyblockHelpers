@@ -69,5 +69,34 @@
   "category.skyblockhelpers": "SkyblockHelpers",
   
   "key.skyblockhelpers.findernewangle": "New Angle For Finder",
-  "key.skyblockhelpers.lockmouse": "Lock/Unlock Player Rotation"
+  "key.skyblockhelpers.lockmouse": "Lock/Unlock Player Rotation",
+
+  "key.skyblockhelpers.echest1": "Open Ender Chest Page 1",
+  "key.skyblockhelpers.echest2": "Open Ender Chest Page 2",
+  "key.skyblockhelpers.echest3": "Open Ender Chest Page 3",
+  "key.skyblockhelpers.echest4": "Open Ender Chest Page 4",
+  "key.skyblockhelpers.echest5": "Open Ender Chest Page 5",
+  "key.skyblockhelpers.echest6": "Open Ender Chest Page 6",
+  "key.skyblockhelpers.echest7": "Open Ender Chest Page 7",
+  "key.skyblockhelpers.echest8": "Open Ender Chest Page 8",
+  "key.skyblockhelpers.echest9": "Open Ender Chest Page 9",
+
+  "key.skyblockhelpers.backpack1": "Open Backpack Slot 1",
+  "key.skyblockhelpers.backpack2": "Open Backpack Slot 2",
+  "key.skyblockhelpers.backpack3": "Open Backpack Slot 3",
+  "key.skyblockhelpers.backpack4": "Open Backpack Slot 4",
+  "key.skyblockhelpers.backpack5": "Open Backpack Slot 5",
+  "key.skyblockhelpers.backpack6": "Open Backpack Slot 6",
+  "key.skyblockhelpers.backpack7": "Open Backpack Slot 7",
+  "key.skyblockhelpers.backpack8": "Open Backpack Slot 8",
+  "key.skyblockhelpers.backpack9": "Open Backpack Slot 9",
+  "key.skyblockhelpers.backpack10": "Open Backpack Slot 10",
+  "key.skyblockhelpers.backpack11": "Open Backpack Slot 11",
+  "key.skyblockhelpers.backpack12": "Open Backpack Slot 12",
+  "key.skyblockhelpers.backpack13": "Open Backpack Slot 13",
+  "key.skyblockhelpers.backpack14": "Open Backpack Slot 14",
+  "key.skyblockhelpers.backpack15": "Open Backpack Slot 15",
+  "key.skyblockhelpers.backpack16": "Open Backpack Slot 16",
+  "key.skyblockhelpers.backpack17": "Open Backpack Slot 17",
+  "key.skyblockhelpers.backpack18": "Open Backpack Slot 18"
 }
