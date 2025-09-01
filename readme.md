@@ -13,3 +13,4 @@ The mod currently only supports 1.21.5 fabric, although that may change eventual
 - MouseLock: Allows you to lock your rotation by pressing a hotkey (useful for farming).
 - E-Chest Hotkeys: Allows you to open any given echest page by pressing a hotkey.
 - Backpack Hotkeys: Allows you to open any given backpack slot by pressing a hotkey.
+- StorageRename: Allows you to rename Ender Chests and Backpacks.

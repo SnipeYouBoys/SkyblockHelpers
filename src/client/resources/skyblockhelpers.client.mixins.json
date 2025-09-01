@@ -5,7 +5,8 @@
 	"client": [
 		"SmallHandMixin",
 		"SlowHandMixin",
-		"LockMouseMixin"
+		"LockMouseMixin",
+		"ScreenTitleMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

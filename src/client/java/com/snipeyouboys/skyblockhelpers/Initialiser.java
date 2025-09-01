@@ -5,6 +5,8 @@ import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
+import com.snipeyouboys.skyblockhelpers.Helpers.StorageRename;
+
 import net.fabricmc.api.ClientModInitializer;
 
 public class Initialiser implements ClientModInitializer {
@@ -16,6 +18,7 @@ public class Initialiser implements ClientModInitializer {
 		Clock.init();
 		CleanTooltip.init();
 		AutoSkyblock.init();
+		StorageRename.init();
 
 		//main classes (not all have init()s)
 		Keybinds.init();
