@@ -1,11 +1,17 @@
 package com.snipeyouboys.skyblockhelpers.Helpers;
 
+import java.util.List;
+
 import com.snipeyouboys.skyblockhelpers.mixin.client.ScreenTitleMixin;
 
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.GenericContainerScreen;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 
 public class StorageRename {
@@ -48,6 +54,7 @@ public class StorageRename {
     static MinecraftClient client = MinecraftClient.getInstance();
 
     public static void init() {
+        //renaming container title
         WorldRenderEvents.START.register(ctx -> {
             if (client.world == null) return;
             currentPage = 1;
@@ -122,7 +129,76 @@ public class StorageRename {
 
 
         });
+        
+        //renaming echest/backpack opening button items
+        ItemTooltipCallback.EVENT.register((ItemStack stack, Item.TooltipContext ctx, TooltipType type, List<Text> lines) -> {
+            Boolean isStorageItem = false;
+            Boolean isBackpack = false;
+            int number = 1;
+            if (!enabled) return;
+            if (lines.isEmpty()) return;
+            String firstTooltipLine = lines.get(0).getString();
+            System.out.println(firstTooltipLine);
+            String[] parts = firstTooltipLine.split(" ");
+            if (parts.length == 0) return;
+            String last = parts[parts.length - 1];
+            
+            if (firstTooltipLine.contains("Ender Chest Page")) {
+                isStorageItem = true;
+                isBackpack = false;
+                try {
+                    number = Integer.parseInt(last);
+                } catch (NumberFormatException ignored) {}
+            }
+
+            if (firstTooltipLine.contains("Backpack Slot")) {
+                isStorageItem = true;
+                isBackpack = true;
+                try {
+                    number = Integer.parseInt(last);
+                } catch (NumberFormatException ignored) {}
+            }
+
+            //backpacks
+            if (!isStorageItem) return;
+            lines.remove(0);
+            if (isBackpack){
+                if (number == 1) { lines.addFirst(Text.literal(StorageRename.backpack1Name)); }
+                if (number == 2) { lines.addFirst(Text.literal(StorageRename.backpack2Name)); }
+                if (number == 3) { lines.addFirst(Text.literal(StorageRename.backpack3Name)); }
+                if (number == 4) { lines.addFirst(Text.literal(StorageRename.backpack4Name)); }
+                if (number == 5) { lines.addFirst(Text.literal(StorageRename.backpack5Name)); }
+                if (number == 6) { lines.addFirst(Text.literal(StorageRename.backpack6Name)); }
+                if (number == 7) { lines.addFirst(Text.literal(StorageRename.backpack7Name)); }
+                if (number == 8) { lines.addFirst(Text.literal(StorageRename.backpack8Name)); }
+                if (number == 9) { lines.addFirst(Text.literal(StorageRename.backpack9Name)); }
+                if (number == 10) { lines.addFirst(Text.literal(StorageRename.backpack10Name)); }
+                if (number == 11) { lines.addFirst(Text.literal(StorageRename.backpack11Name)); }
+                if (number == 12) { lines.addFirst(Text.literal(StorageRename.backpack12Name)); }
+                if (number == 13) { lines.addFirst(Text.literal(StorageRename.backpack13Name)); }
+                if (number == 14) { lines.addFirst(Text.literal(StorageRename.backpack14Name)); }
+                if (number == 15) { lines.addFirst(Text.literal(StorageRename.backpack15Name)); }
+                if (number == 16) { lines.addFirst(Text.literal(StorageRename.backpack16Name)); }
+                if (number == 17) { lines.addFirst(Text.literal(StorageRename.backpack17Name)); }
+                if (number == 18) { lines.addFirst(Text.literal(StorageRename.backpack18Name)); }
+            }
+            
+            //echests
+            if (!isBackpack) {
+                if (number == 1) { lines.addFirst(Text.literal(StorageRename.echest1Name)); }
+                if (number == 2) { lines.addFirst(Text.literal(StorageRename.echest2Name)); }
+                if (number == 3) { lines.addFirst(Text.literal(StorageRename.echest3Name)); }
+                if (number == 4) { lines.addFirst(Text.literal(StorageRename.echest4Name)); }
+                if (number == 5) { lines.addFirst(Text.literal(StorageRename.echest5Name)); }
+                if (number == 6) { lines.addFirst(Text.literal(StorageRename.echest6Name)); }
+                if (number == 7) { lines.addFirst(Text.literal(StorageRename.echest7Name)); }
+                if (number == 8) { lines.addFirst(Text.literal(StorageRename.echest8Name)); }
+                if (number == 9) { lines.addFirst(Text.literal(StorageRename.echest9Name)); }
+            }
+        });
     }
+    
+    
     public static void setScreenTitle(String newTitle) {
         Screen screen = client.currentScreen;
         if (newTitle == null) newTitle = "Storage Title Is null :(";
