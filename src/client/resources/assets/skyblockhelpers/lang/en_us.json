@@ -162,5 +162,12 @@
   "key.skyblockhelpers.backpack15": "Open Backpack Slot 15",
   "key.skyblockhelpers.backpack16": "Open Backpack Slot 16",
   "key.skyblockhelpers.backpack17": "Open Backpack Slot 17",
-  "key.skyblockhelpers.backpack18": "Open Backpack Slot 18"
+  "key.skyblockhelpers.backpack18": "Open Backpack Slot 18",
+
+  "category.skyblockhelpers.inventoryoverlay": "Inventory Overlay",
+  
+  "option.skyblockhelpers.inventoryoverlay.enabled": "Inventory Overlay",
+  "option.skyblockhelpers.inventoryoverlay.enabled.tooltip": "Show Inventory On Screen",
+  "option.skyblockhelpers.inventoryoverlay.corner": "Corner",
+  "option.skyblockhelpers.inventoryoverlay.corner.tooltip": "Whether to put the overlay in the bottom right corner"
 }

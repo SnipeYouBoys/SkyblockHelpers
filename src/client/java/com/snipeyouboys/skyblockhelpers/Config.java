@@ -5,6 +5,7 @@ import java.io.IOException;
 import com.snipeyouboys.skyblockhelpers.Helpers.AutoSkyblock;
 import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
+import com.snipeyouboys.skyblockhelpers.Helpers.InventoryOverlay;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
 import com.snipeyouboys.skyblockhelpers.Helpers.SlowHand;
@@ -168,8 +169,16 @@ public class Config {
         .setTooltip(Text.translatable("option.skyblockhelpers.storagerename.backpack17.tooltip")).setSaveConsumer(newValue -> StorageRename.backpack17Name = newValue).build());
         storageRename.addEntry(entryBuilder.startStrField(Text.translatable("option.skyblockhelpers.storagerename.backpack18"), StorageRename.backpack18Name).setDefaultValue("Backpack 18")
         .setTooltip(Text.translatable("option.skyblockhelpers.storagerename.backpack18.tooltip")).setSaveConsumer(newValue -> StorageRename.backpack18Name = newValue).build());
+        
 
 
+        ConfigCategory inventoryOverlay = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.inventoryoverlay"));
+        
+        inventoryOverlay.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryoverlay.enabled"), InventoryOverlay.enabled).setDefaultValue(false)
+        .setTooltip(Text.translatable("option.skyblockhelpers.inventoryoverlay.enabled.tooltip")).setSaveConsumer(newValue -> InventoryOverlay.enabled = newValue).build());
+
+        inventoryOverlay.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryoverlay.corner"), InventoryOverlay.corner).setDefaultValue(false)
+        .setTooltip(Text.translatable("option.skyblockhelpers.inventoryoverlay.corner.tooltip")).setSaveConsumer(newValue -> InventoryOverlay.corner = newValue).build());
 
 
         
@@ -231,6 +240,9 @@ public class Config {
             StorageRename.backpack17Name = data.backpack17CustomName;
             StorageRename.backpack18Name = data.backpack18CustomName;
 
+            InventoryOverlay.enabled = data.inventoryOverlayEnabled;
+            InventoryOverlay.corner = data.inventoryOverlayCorner;
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -287,6 +299,9 @@ public class Config {
             data.backpack16CustomName = StorageRename.backpack16Name;
             data.backpack17CustomName = StorageRename.backpack17Name;
             data.backpack18CustomName = StorageRename.backpack18Name;
+
+            data.inventoryOverlayEnabled = InventoryOverlay.enabled;
+            data.inventoryOverlayCorner = InventoryOverlay.corner;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);

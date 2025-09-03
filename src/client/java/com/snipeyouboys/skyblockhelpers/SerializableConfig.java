@@ -51,4 +51,7 @@ public class SerializableConfig {
     String backpack16CustomName = "Backpack 16";
     String backpack17CustomName = "Backpack 17";
     String backpack18CustomName = "Backpack 18";
+
+    boolean inventoryOverlayEnabled = false;
+    boolean inventoryOverlayCorner = false;
 }

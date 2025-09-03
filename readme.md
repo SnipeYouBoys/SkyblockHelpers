@@ -14,3 +14,4 @@ SkyblockHelpers is a fabric mod that includes some useful helpers for Hypixel Sk
 - E-Chest Hotkeys: Allows you to open any given echest page by pressing a hotkey.
 - Backpack Hotkeys: Allows you to open any given backpack slot by pressing a hotkey.
 - StorageRename: Allows you to rename Ender Chests and Backpacks.
+- InventoryOverlay: Shows all items in your inventory even when the inventory is closed.
