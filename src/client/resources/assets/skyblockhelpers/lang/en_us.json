@@ -1,140 +1,137 @@
 {
   "title.skyblockhelpers.config": "SkyblockHelpers",
+  "category.skyblockhelpers": "SkyblockHelpers",
+  "blank": "",
+
+
+
+  "category.skyblockhelpers.misc": "Misc",
+  "category.skyblockhelpers.hud": "HUD",
+  "category.skyblockhelpers.storagerename": "Storage Rename",
   
 
-  "category.skyblockhelpers.pressurewarning": "PressureWarning",
   
-  "option.skyblockhelpers.pressurewarning.enabled": "Enabled",
+  "option.skyblockhelpers.pressurewarning.enabled": "Pressure Warning",
   "option.skyblockhelpers.pressurewarning.enabled.tooltip": "Whether Pressure Warning Is Enabled",
-  "option.skyblockhelpers.pressurewarning.ylevel": "Y Level",
-  "option.skyblockhelpers.pressurewarning.ylevel.tooltip": "Y Level To Trigger At",
-  "option.skyblockhelpers.pressurewarning.volume": "Volume",
-  "option.skyblockhelpers.pressurewarning.volume.tooltip": "Volume Of Sound Warning",
+  "option.skyblockhelpers.pressurewarning.ylevel": "Pressure Warning Y Level",
+  "option.skyblockhelpers.pressurewarning.ylevel.tooltip": "Y level to trigger at",
+  "option.skyblockhelpers.pressurewarning.volume": "Pressure Warning Volume",
+  "option.skyblockhelpers.pressurewarning.volume.tooltip": "Volume of sound warning",
 
-
-
-  "category.skyblockhelpers.inventoryscale": "Inventory Scale",
   
   "option.skyblockhelpers.inventoryscale.normalscale": "Normal Scale",
   "option.skyblockhelpers.inventoryscale.normalscale.tooltip": "Normal Gameplay GUI Scale",
   "option.skyblockhelpers.inventoryscale.containerscale": "Container Scale",
   "option.skyblockhelpers.inventoryscale.containerscale.tooltip": "Chest / Inventory GUI Scale",
-
-
-
-  "category.skyblockhelpers.smallhand": "Small Hand",
   
-  "option.skyblockhelpers.smallhand.enabled": "Enabled",
-  "option.skyblockhelpers.smallhand.enabled.tooltip": "Whether SmallHand Is Enabled",
+
+  "option.skyblockhelpers.smallhand.enabled": "Small Hand",
+  "option.skyblockhelpers.smallhand.enabled.tooltip": "Make the hand / item model smaller",
   "option.skyblockhelpers.smallhand.size": "Hand Size",
-  "option.skyblockhelpers.smallhand.size.tooltip": "The Size Of Your Hand / Held Item",
+  "option.skyblockhelpers.smallhand.size.tooltip": "The size of your hand / held item",
 
-
-
-  "category.skyblockhelpers.clock": "Clock",
   
-  "option.skyblockhelpers.clock.enabled": "Enabled",
-  "option.skyblockhelpers.clock.enabled.tooltip": "Whether Clock Is Enabled",
+  "option.skyblockhelpers.clock.enabled": "Show Clock",
+  "option.skyblockhelpers.clock.enabled.tooltip": "Whether to show a real life time clock",
   "option.skyblockhelpers.clock.utcoffset": "UTC Offset",
-  "option.skyblockhelpers.clock.utcoffset.tooltip": "What UTC Offset To Use For The Clock",
-
-
-
-  "category.skyblockhelpers.cleantooltip": "Clean Tooltip",
+  "option.skyblockhelpers.clock.utcoffset.tooltip": "What UTC Offset to use for the clock",
   
-  "option.skyblockhelpers.cleantooltip.enabled": "Enabled",
-  "option.skyblockhelpers.cleantooltip.enabled.tooltip": "Whether Clean Tooltip Is Enabled",
+
+  "option.skyblockhelpers.cleantooltip.enabled": "Clean Tooltips",
+  "option.skyblockhelpers.cleantooltip.enabled.tooltip": "Whether to clean item tooltips",
   "option.skyblockhelpers.cleantooltip.removeempty": "Remove Empty Lines",
-  "option.skyblockhelpers.cleantooltip.removeempty.tooltip": "Whether To Remove Empty Tooltip Lines (alpha feature and may break other item tooltips)",
+  "option.skyblockhelpers.cleantooltip.removeempty.tooltip": "Whether to remove empty tooltip lines",
   "option.skyblockhelpers.cleantooltip.cleandrills": "Clean Drill Tooltips",
-  "option.skyblockhelpers.cleantooltip.cleandrills.tooltip": "Whether To Make Drill Tooltips Much Shorter (alpha feature and may not work 100% of the time)",
+  "option.skyblockhelpers.cleantooltip.cleandrills.tooltip": "Whether to make Drill tooltips much shorter",
 
-
-
-  "category.skyblockhelpers.autoskyblock": "Auto Skyblock",
   
   "option.skyblockhelpers.autoskyblock.enabled": "Automatically Join Skyblock",
   "option.skyblockhelpers.autoskyblock.enabled.tooltip": "Automatically makes you join skyblock when joining hypixel",
 
-
-
-  "category.skyblockhelpers.slowhand": "Slow Hand",
   
   "option.skyblockhelpers.slowhand.enabled": "Slow The Hand Swing Animation",
   "option.skyblockhelpers.slowhand.enabled.tooltip": "Makes the hand swing animation slower, as if you had mining fatigue",
-  "option.skyblockhelpers.slowhand.speed": "Speed",
+  "option.skyblockhelpers.slowhand.speed": "Hand Swing Speed",
   "option.skyblockhelpers.slowhand.speed.tooltip": "What Speed the hand should swing at",
 
-
-  "category.skyblockhelpers.storagerename": "Storage Rename",
   
   "option.skyblockhelpers.storagerename.enabled": "Enable Custom Storage Names",
   "option.skyblockhelpers.storagerename.enabled.tooltip": "Custom Storage Names",
-  
   "option.skyblockhelpers.storagerename.echest1": "EChest Page 1 Name",
-  "option.skyblockhelpers.storagerename.echest1.tooltip": "Custom Name For Ender Chest Page 1",
+  "option.skyblockhelpers.storagerename.echest1.tooltip": "Custom name for Ender Chest Page 1",
   "option.skyblockhelpers.storagerename.echest2": "EChest Page 2 Name",
-  "option.skyblockhelpers.storagerename.echest2.tooltip": "Custom Name For Ender Chest Page 2",
+  "option.skyblockhelpers.storagerename.echest2.tooltip": "Custom name for Ender Chest Page 2",
   "option.skyblockhelpers.storagerename.echest3": "EChest Page 3 Name",
-  "option.skyblockhelpers.storagerename.echest3.tooltip": "Custom Name For Ender Chest Page 3",
+  "option.skyblockhelpers.storagerename.echest3.tooltip": "Custom name for Ender Chest Page 3",
   "option.skyblockhelpers.storagerename.echest4": "EChest Page 4 Name",
-  "option.skyblockhelpers.storagerename.echest4.tooltip": "Custom Name For Ender Chest Page 4",
+  "option.skyblockhelpers.storagerename.echest4.tooltip": "Custom name for Ender Chest Page 4",
   "option.skyblockhelpers.storagerename.echest5": "EChest Page 5 Name",
-  "option.skyblockhelpers.storagerename.echest5.tooltip": "Custom Name For Ender Chest Page 5",
+  "option.skyblockhelpers.storagerename.echest5.tooltip": "Custom name for Ender Chest Page 5",
   "option.skyblockhelpers.storagerename.echest6": "EChest Page 6 Name",
-  "option.skyblockhelpers.storagerename.echest6.tooltip": "Custom Name For Ender Chest Page 6",
+  "option.skyblockhelpers.storagerename.echest6.tooltip": "Custom name for Ender Chest Page 6",
   "option.skyblockhelpers.storagerename.echest7": "EChest Page 7 Name",
-  "option.skyblockhelpers.storagerename.echest7.tooltip": "Custom Name For Ender Chest Page 7",
+  "option.skyblockhelpers.storagerename.echest7.tooltip": "Custom name for Ender Chest Page 7",
   "option.skyblockhelpers.storagerename.echest8": "EChest Page 8 Name",
-  "option.skyblockhelpers.storagerename.echest8.tooltip": "Custom Name For Ender Chest Page 8",
+  "option.skyblockhelpers.storagerename.echest8.tooltip": "Custom name for Ender Chest Page 8",
   "option.skyblockhelpers.storagerename.echest9": "EChest Page 9 Name",
-  "option.skyblockhelpers.storagerename.echest9.tooltip": "Custom Name For Ender Chest Page 9",
-
+  "option.skyblockhelpers.storagerename.echest9.tooltip": "Custom name for Ender Chest Page 9",
   "option.skyblockhelpers.storagerename.backpack1": "Backpack Slot 1 Name",
-  "option.skyblockhelpers.storagerename.backpack1.tooltip": "Custom Name For Backpack Slot 1",
+  "option.skyblockhelpers.storagerename.backpack1.tooltip": "Custom name for Backpack Slot 1",
   "option.skyblockhelpers.storagerename.backpack2": "Backpack Slot 2 Name",
-  "option.skyblockhelpers.storagerename.backpack2.tooltip": "Custom Name For Backpack Slot 2",
+  "option.skyblockhelpers.storagerename.backpack2.tooltip": "Custom name for Backpack Slot 2",
   "option.skyblockhelpers.storagerename.backpack3": "Backpack Slot 3 Name",
-  "option.skyblockhelpers.storagerename.backpack3.tooltip": "Custom Name For Backpack Slot 3",
+  "option.skyblockhelpers.storagerename.backpack3.tooltip": "Custom name for Backpack Slot 3",
   "option.skyblockhelpers.storagerename.backpack4": "Backpack Slot 4 Name",
-  "option.skyblockhelpers.storagerename.backpack4.tooltip": "Custom Name For Backpack Slot 4",
+  "option.skyblockhelpers.storagerename.backpack4.tooltip": "Custom name for Backpack Slot 4",
   "option.skyblockhelpers.storagerename.backpack5": "Backpack Slot 5 Name",
-  "option.skyblockhelpers.storagerename.backpack5.tooltip": "Custom Name For Backpack Slot 5",
+  "option.skyblockhelpers.storagerename.backpack5.tooltip": "Custom name for Backpack Slot 5",
   "option.skyblockhelpers.storagerename.backpack6": "Backpack Slot 6 Name",
-  "option.skyblockhelpers.storagerename.backpack6.tooltip": "Custom Name For Backpack Slot 6",
+  "option.skyblockhelpers.storagerename.backpack6.tooltip": "Custom name for Backpack Slot 6",
   "option.skyblockhelpers.storagerename.backpack7": "Backpack Slot 7 Name",
-  "option.skyblockhelpers.storagerename.backpack7.tooltip": "Custom Name For Backpack Slot 7",
+  "option.skyblockhelpers.storagerename.backpack7.tooltip": "Custom name for Backpack Slot 7",
   "option.skyblockhelpers.storagerename.backpack8": "Backpack Slot 8 Name",
-  "option.skyblockhelpers.storagerename.backpack8.tooltip": "Custom Name For Backpack Slot 8",
+  "option.skyblockhelpers.storagerename.backpack8.tooltip": "Custom name for Backpack Slot 8",
   "option.skyblockhelpers.storagerename.backpack9": "Backpack Slot 9 Name",
-  "option.skyblockhelpers.storagerename.backpack9.tooltip": "Custom Name For Backpack Slot 9",
+  "option.skyblockhelpers.storagerename.backpack9.tooltip": "Custom name for Backpack Slot 9",
   "option.skyblockhelpers.storagerename.backpack10": "Backpack Slot 10 Name",
-  "option.skyblockhelpers.storagerename.backpack10.tooltip": "Custom Name For Backpack Slot 10",
+  "option.skyblockhelpers.storagerename.backpack10.tooltip": "Custom name for Backpack Slot 10",
   "option.skyblockhelpers.storagerename.backpack11": "Backpack Slot 11 Name",
-  "option.skyblockhelpers.storagerename.backpack11.tooltip": "Custom Name For Backpack Slot 11",
+  "option.skyblockhelpers.storagerename.backpack11.tooltip": "Custom name for Backpack Slot 11",
   "option.skyblockhelpers.storagerename.backpack12": "Backpack Slot 12 Name",
-  "option.skyblockhelpers.storagerename.backpack12.tooltip": "Custom Name For Backpack Slot 12",
+  "option.skyblockhelpers.storagerename.backpack12.tooltip": "Custom name for Backpack Slot 12",
   "option.skyblockhelpers.storagerename.backpack13": "Backpack Slot 13 Name",
-  "option.skyblockhelpers.storagerename.backpack13.tooltip": "Custom Name For Backpack Slot 13",
+  "option.skyblockhelpers.storagerename.backpack13.tooltip": "Custom name for Backpack Slot 13",
   "option.skyblockhelpers.storagerename.backpack14": "Backpack Slot 14 Name",
-  "option.skyblockhelpers.storagerename.backpack14.tooltip": "Custom Name For Backpack Slot 14",
+  "option.skyblockhelpers.storagerename.backpack14.tooltip": "Custom name for Backpack Slot 14",
   "option.skyblockhelpers.storagerename.backpack15": "Backpack Slot 15 Name",
-  "option.skyblockhelpers.storagerename.backpack15.tooltip": "Custom Name For Backpack Slot 15",
+  "option.skyblockhelpers.storagerename.backpack15.tooltip": "Custom name for Backpack Slot 15",
   "option.skyblockhelpers.storagerename.backpack16": "Backpack Slot 16 Name",
-  "option.skyblockhelpers.storagerename.backpack16.tooltip": "Custom Name For Backpack Slot 16",
+  "option.skyblockhelpers.storagerename.backpack16.tooltip": "Custom name for Backpack Slot 16",
   "option.skyblockhelpers.storagerename.backpack17": "Backpack Slot 17 Name",
-  "option.skyblockhelpers.storagerename.backpack17.tooltip": "Custom Name For Backpack Slot 17",
+  "option.skyblockhelpers.storagerename.backpack17.tooltip": "Custom name for Backpack Slot 17",
   "option.skyblockhelpers.storagerename.backpack18": "Backpack Slot 18 Name",
-  "option.skyblockhelpers.storagerename.backpack18.tooltip": "Custom Name For Backpack Slot 18",
+  "option.skyblockhelpers.storagerename.backpack18.tooltip": "Custom name for Backpack Slot 18",
 
-
-
-
-  "category.skyblockhelpers": "SkyblockHelpers",
   
+  "option.skyblockhelpers.inventoryoverlay.enabled": "Inventory Overlay",
+  "option.skyblockhelpers.inventoryoverlay.enabled.tooltip": "Show inventory on screen",
+  "option.skyblockhelpers.inventoryoverlay.corner": "Inventory Overlay In Corner",
+  "option.skyblockhelpers.inventoryoverlay.corner.tooltip": "Whether to put the overlay in the bottom right corner",
+
+
+  "option.skyblockhelpers.shellwisehighlight.enabled": "Highlight Shellwise",
+  "option.skyblockhelpers.shellwisehighlight.enabled.tooltip": "Highlight Shellwise to make them easier to see",
+  "option.skyblockhelpers.shellwisehighlight.radius": "Shellwise Highlight Radius",
+  "option.skyblockhelpers.shellwisehighlight.radius.tooltip": "How far away to show Shellwise from (can cause lag at high settings)",
+
+
+  "option.skyblockhelpers.commissionoverlay.enabled": "Commisions Overlay",
+  "option.skyblockhelpers.commissionoverlay.enabled.tooltip": "Show Dwarven Mines / Crystal Hollows / Glacite Tunnels commissions on screen",
+
+  
+
   "key.skyblockhelpers.findernewangle": "New Angle For Finder",
   "key.skyblockhelpers.lockmouse": "Lock/Unlock Player Rotation",
-
   "key.skyblockhelpers.echest1": "Open Ender Chest Page 1",
   "key.skyblockhelpers.echest2": "Open Ender Chest Page 2",
   "key.skyblockhelpers.echest3": "Open Ender Chest Page 3",
@@ -144,7 +141,6 @@
   "key.skyblockhelpers.echest7": "Open Ender Chest Page 7",
   "key.skyblockhelpers.echest8": "Open Ender Chest Page 8",
   "key.skyblockhelpers.echest9": "Open Ender Chest Page 9",
-
   "key.skyblockhelpers.backpack1": "Open Backpack Slot 1",
   "key.skyblockhelpers.backpack2": "Open Backpack Slot 2",
   "key.skyblockhelpers.backpack3": "Open Backpack Slot 3",
@@ -162,12 +158,5 @@
   "key.skyblockhelpers.backpack15": "Open Backpack Slot 15",
   "key.skyblockhelpers.backpack16": "Open Backpack Slot 16",
   "key.skyblockhelpers.backpack17": "Open Backpack Slot 17",
-  "key.skyblockhelpers.backpack18": "Open Backpack Slot 18",
-
-  "category.skyblockhelpers.inventoryoverlay": "Inventory Overlay",
-  
-  "option.skyblockhelpers.inventoryoverlay.enabled": "Inventory Overlay",
-  "option.skyblockhelpers.inventoryoverlay.enabled.tooltip": "Show Inventory On Screen",
-  "option.skyblockhelpers.inventoryoverlay.corner": "Corner",
-  "option.skyblockhelpers.inventoryoverlay.corner.tooltip": "Whether to put the overlay in the bottom right corner"
+  "key.skyblockhelpers.backpack18": "Open Backpack Slot 18"
 }

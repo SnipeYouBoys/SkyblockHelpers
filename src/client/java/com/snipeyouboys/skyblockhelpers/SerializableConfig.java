@@ -54,4 +54,9 @@ public class SerializableConfig {
 
     boolean inventoryOverlayEnabled = false;
     boolean inventoryOverlayCorner = false;
+
+    boolean shellwiseHighlightEnabled = true;
+    int shellwiseHighlightRadius = 20;
+
+    boolean commissionOverlayEnabled = true;
 }

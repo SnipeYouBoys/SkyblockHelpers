@@ -5,9 +5,11 @@ import java.io.IOException;
 import com.snipeyouboys.skyblockhelpers.Helpers.AutoSkyblock;
 import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
+import com.snipeyouboys.skyblockhelpers.Helpers.CommissionOverlay;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryOverlay;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
+import com.snipeyouboys.skyblockhelpers.Helpers.ShellwiseHighlight;
 import com.snipeyouboys.skyblockhelpers.Helpers.SlowHand;
 import com.snipeyouboys.skyblockhelpers.Helpers.SmallHand;
 import com.snipeyouboys.skyblockhelpers.Helpers.StorageRename;
@@ -38,79 +40,92 @@ public class Config {
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
         
 
+        ConfigCategory misc = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.misc"));
+        ConfigCategory hud = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.hud"));
+        ConfigCategory storageRename = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.storagerename"));
 
-        ConfigCategory pressureWarning = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.pressurewarning"));
+
+
+
+
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
         
-        pressureWarning.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.pressurewarning.enabled"), PressureWarning.enabled).setDefaultValue(true)
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.pressurewarning.enabled"), PressureWarning.enabled).setDefaultValue(true)
         .setTooltip(Text.translatable("option.skyblockhelpers.pressurewarning.enabled.tooltip")).setSaveConsumer(newValue -> PressureWarning.enabled = newValue).build());
        
-        pressureWarning.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.pressurewarning.ylevel"), PressureWarning.Y_Level, -64, 100).setDefaultValue(77)
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.pressurewarning.ylevel"), PressureWarning.Y_Level, -64, 100).setDefaultValue(77)
         .setTooltip(Text.translatable("option.skyblockhelpers.pressurewarning.ylevel.tooltip")).setSaveConsumer(newValue -> PressureWarning.Y_Level = newValue).build());
 
-        pressureWarning.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.pressurewarning.volume"), PressureWarning.volume, 1, 100).setDefaultValue(100)
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.pressurewarning.volume"), PressureWarning.volume, 1, 100).setDefaultValue(100)
         .setTooltip(Text.translatable("option.skyblockhelpers.pressurewarning.volume.tooltip")).setSaveConsumer(newValue -> PressureWarning.volume = newValue).build());
 
 
-
-        ConfigCategory inventoryScale = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.inventoryscale"));
        
-        inventoryScale.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.inventoryscale.normalscale"), InventoryScale.normalScale, 0, 4).setDefaultValue(2)
+        hud.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        hud.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.inventoryscale.normalscale"), InventoryScale.normalScale, 0, 4).setDefaultValue(2)
         .setTooltip(Text.translatable("option.skyblockhelpers.inventoryscale.normalscale.tooltip")).setSaveConsumer(newValue -> InventoryScale.normalScale = newValue).build());
         
-        inventoryScale.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.inventoryscale.containerscale"), InventoryScale.customScale, 0, 4).setDefaultValue(3)
+        hud.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.inventoryscale.containerscale"), InventoryScale.customScale, 0, 4).setDefaultValue(3)
         .setTooltip(Text.translatable("option.skyblockhelpers.inventoryscale.containerscale.tooltip")).setSaveConsumer(newValue -> InventoryScale.customScale = newValue).build());
 
 
 
-        ConfigCategory smallHand = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.smallhand"));
         
-        smallHand.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.smallhand.enabled"), SmallHand.enabled).setDefaultValue(true)
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.smallhand.enabled"), SmallHand.enabled).setDefaultValue(true)
         .setTooltip(Text.translatable("option.skyblockhelpers.smallhand.enabled.tooltip")).setSaveConsumer(newValue -> SmallHand.enabled = newValue).build());
        
-        smallHand.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.smallhand.size"), SmallHand.size, 10, 100).setDefaultValue(50)
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.smallhand.size"), SmallHand.size, 10, 100).setDefaultValue(50)
         .setTooltip(Text.translatable("option.skyblockhelpers.smallhand.size.tooltip")).setSaveConsumer(newValue -> SmallHand.size = newValue).build());
 
 
 
-        ConfigCategory clock = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.clock"));
+
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
         
-        clock.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.clock.enabled"), Clock.enabled).setDefaultValue(true)
-        .setTooltip(Text.translatable("option.skyblockhelpers.clock.enabled.tooltip")).setSaveConsumer(newValue -> Clock.enabled = newValue).build());
-       
-        clock.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.clock.utcoffset"), Clock.utcOffset, -11, 12).setDefaultValue(0)
-        .setTooltip(Text.translatable("option.skyblockhelpers.clock.utcoffset.tooltip")).setSaveConsumer(newValue -> Clock.utcOffset = newValue).build());
-
-        ConfigCategory cleanTooltip = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.cleantooltip"));
-        
-        cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.enabled"), CleanTooltip.enabled).setDefaultValue(true)
-        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.enabled.tooltip")).setSaveConsumer(newValue -> CleanTooltip.enabled = newValue).build());
-
-        cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.removeempty"), CleanTooltip.removeEmpty).setDefaultValue(true)
-        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.removeempty.tooltip")).setSaveConsumer(newValue -> CleanTooltip.removeEmpty = newValue).build());
-
-        cleanTooltip.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills"), CleanTooltip.cleanDrills).setDefaultValue(true)
-        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills.tooltip")).setSaveConsumer(newValue -> CleanTooltip.cleanDrills = newValue).build());
-
-
-
-        ConfigCategory autoSkyblock = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.autoskyblock"));
-        
-        autoSkyblock.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.autoskyblock.enabled"), AutoSkyblock.enabled).setDefaultValue(true)
-        .setTooltip(Text.translatable("option.skyblockhelpers.autoskyblock.enabled.tooltip")).setSaveConsumer(newValue -> AutoSkyblock.enabled = newValue).build());
-
-
-
-        ConfigCategory slowHand = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.slowhand"));
-        
-        slowHand.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.slowhand.enabled"), SlowHand.enabled).setDefaultValue(true)
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.slowhand.enabled"), SlowHand.enabled).setDefaultValue(true)
         .setTooltip(Text.translatable("option.skyblockhelpers.slowhand.enabled.tooltip")).setSaveConsumer(newValue -> SlowHand.enabled = newValue).build());
 
-        slowHand.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.slowhand.speed"), SlowHand.speed, 5, 100).setDefaultValue(25)
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.slowhand.speed"), SlowHand.speed, 5, 100).setDefaultValue(25)
         .setTooltip(Text.translatable("option.skyblockhelpers.slowhand.speed.tooltip")).setSaveConsumer(newValue -> SlowHand.speed = newValue).build());
 
 
 
-        ConfigCategory storageRename = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.storagerename"));
+        
+        hud.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.clock.enabled"), Clock.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.clock.enabled.tooltip")).setSaveConsumer(newValue -> Clock.enabled = newValue).build());
+       
+        hud.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.clock.utcoffset"), Clock.utcOffset, -11, 12).setDefaultValue(0)
+        .setTooltip(Text.translatable("option.skyblockhelpers.clock.utcoffset.tooltip")).setSaveConsumer(newValue -> Clock.utcOffset = newValue).build());
+
+
+
+        
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.enabled"), CleanTooltip.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.enabled.tooltip")).setSaveConsumer(newValue -> CleanTooltip.enabled = newValue).build());
+
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.removeempty"), CleanTooltip.removeEmpty).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.removeempty.tooltip")).setSaveConsumer(newValue -> CleanTooltip.removeEmpty = newValue).build());
+
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills"), CleanTooltip.cleanDrills).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.cleantooltip.cleandrills.tooltip")).setSaveConsumer(newValue -> CleanTooltip.cleanDrills = newValue).build());
+
+
+
+        
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.autoskyblock.enabled"), AutoSkyblock.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.autoskyblock.enabled.tooltip")).setSaveConsumer(newValue -> AutoSkyblock.enabled = newValue).build());
+
+
+
 
         storageRename.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.storagerename.enabled"), StorageRename.enabled).setDefaultValue(true)
         .setTooltip(Text.translatable("option.skyblockhelpers.storagerename.enabled.tooltip")).setSaveConsumer(newValue -> StorageRename.enabled = newValue).build());
@@ -132,7 +147,6 @@ public class Config {
         .setTooltip(Text.translatable("option.skyblockhelpers.storagerename.echest8.tooltip")).setSaveConsumer(newValue -> StorageRename.echest8Name = newValue).build());
         storageRename.addEntry(entryBuilder.startStrField(Text.translatable("option.skyblockhelpers.storagerename.echest9"), StorageRename.echest9Name).setDefaultValue("Echest 9")
         .setTooltip(Text.translatable("option.skyblockhelpers.storagerename.echest9.tooltip")).setSaveConsumer(newValue -> StorageRename.echest9Name = newValue).build());
-
         storageRename.addEntry(entryBuilder.startStrField(Text.translatable("option.skyblockhelpers.storagerename.backpack1"), StorageRename.backpack1Name).setDefaultValue("Backpack 1")
         .setTooltip(Text.translatable("option.skyblockhelpers.storagerename.backpack1.tooltip")).setSaveConsumer(newValue -> StorageRename.backpack1Name = newValue).build());
         storageRename.addEntry(entryBuilder.startStrField(Text.translatable("option.skyblockhelpers.storagerename.backpack2"), StorageRename.backpack2Name).setDefaultValue("Backpack 2")
@@ -172,13 +186,33 @@ public class Config {
         
 
 
-        ConfigCategory inventoryOverlay = builder.getOrCreateCategory(Text.translatable("category.skyblockhelpers.inventoryoverlay"));
         
-        inventoryOverlay.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryoverlay.enabled"), InventoryOverlay.enabled).setDefaultValue(false)
+        hud.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryoverlay.enabled"), InventoryOverlay.enabled).setDefaultValue(false)
         .setTooltip(Text.translatable("option.skyblockhelpers.inventoryoverlay.enabled.tooltip")).setSaveConsumer(newValue -> InventoryOverlay.enabled = newValue).build());
 
-        inventoryOverlay.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryoverlay.corner"), InventoryOverlay.corner).setDefaultValue(false)
+        hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryoverlay.corner"), InventoryOverlay.corner).setDefaultValue(false)
         .setTooltip(Text.translatable("option.skyblockhelpers.inventoryoverlay.corner.tooltip")).setSaveConsumer(newValue -> InventoryOverlay.corner = newValue).build());
+
+
+
+        
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        misc.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.shellwisehighlight.enabled"), ShellwiseHighlight.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.shellwisehighlight.enabled.tooltip")).setSaveConsumer(newValue -> ShellwiseHighlight.enabled = newValue).build());
+
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.shellwisehighlight.radius"), ShellwiseHighlight.radius, 5, 25).setDefaultValue(20)
+        .setTooltip(Text.translatable("option.skyblockhelpers.shellwisehighlight.radius.tooltip")).setSaveConsumer(newValue -> ShellwiseHighlight.radius = newValue).build());
+
+
+
+
+        hud.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.commissionoverlay.enabled"), CommissionOverlay.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.commissionoverlay.enabled.tooltip")).setSaveConsumer(newValue -> CommissionOverlay.enabled = newValue).build());
 
 
         
@@ -243,6 +277,11 @@ public class Config {
             InventoryOverlay.enabled = data.inventoryOverlayEnabled;
             InventoryOverlay.corner = data.inventoryOverlayCorner;
 
+            ShellwiseHighlight.enabled = data.shellwiseHighlightEnabled;
+            ShellwiseHighlight.radius = data.shellwiseHighlightRadius;
+
+            CommissionOverlay.enabled = data.commissionOverlayEnabled;
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -302,6 +341,11 @@ public class Config {
 
             data.inventoryOverlayEnabled = InventoryOverlay.enabled;
             data.inventoryOverlayCorner = InventoryOverlay.corner;
+
+            data.shellwiseHighlightEnabled = ShellwiseHighlight.enabled;
+            data.shellwiseHighlightRadius = ShellwiseHighlight.radius;
+
+            data.commissionOverlayEnabled = CommissionOverlay.enabled;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);

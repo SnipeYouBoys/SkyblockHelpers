@@ -6,7 +6,8 @@
 		"SmallHandMixin",
 		"SlowHandMixin",
 		"LockMouseMixin",
-		"ScreenTitleMixin"
+		"ScreenTitleMixin",
+		"EntityGlowMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
