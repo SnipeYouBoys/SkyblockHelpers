@@ -81,12 +81,12 @@ public class Keybinds {
             }
 
             if (lockMouseKey.wasPressed()) {
-                MouseLock.enabled = !MouseLock.enabled;
                 if (MouseLock.enabled){
                     client.player.sendMessage(Text.literal("§7Unlocked Player Rotation"), false);
                 } else{
                     client.player.sendMessage(Text.literal("§7Locked Player Rotation"), false);
                 }
+                MouseLock.enabled = !MouseLock.enabled;
             }
             
             //echest + backpack commands (different formatting for less clutter)
