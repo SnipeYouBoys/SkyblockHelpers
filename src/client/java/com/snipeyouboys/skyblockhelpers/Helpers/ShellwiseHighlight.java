@@ -25,6 +25,7 @@ public class ShellwiseHighlight {
         });
     }
     public static boolean shouldEntityGlow(Entity entity){
+        if (!enabled) return false;
         if (!(entity instanceof TurtleEntity)) return false;
         else {
             double dx = client.player.getX() - entity.getX(); double dy = client.player.getY() - entity.getY(); double dz = client.player.getZ() - entity.getZ();

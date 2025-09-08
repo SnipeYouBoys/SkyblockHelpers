@@ -138,7 +138,6 @@ public class StorageRename {
             if (!enabled) return;
             if (lines.isEmpty()) return;
             String firstTooltipLine = lines.get(0).getString();
-            System.out.println(firstTooltipLine);
             String[] parts = firstTooltipLine.split(" ");
             if (parts.length == 0) return;
             String last = parts[parts.length - 1];
