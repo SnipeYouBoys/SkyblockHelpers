@@ -19,9 +19,11 @@
   "option.skyblockhelpers.pressurewarning.volume.tooltip": "Volume of sound warning",
 
   
-  "option.skyblockhelpers.inventoryscale.normalscale": "Normal Scale",
+  "option.skyblockhelpers.inventoryscale.enabled": "Seperate Container GUI Scale",
+  "option.skyblockhelpers.inventoryscale.enabled.tooltip": "Set a different GUI scale for gameplay as for Containers/Screens",
+  "option.skyblockhelpers.inventoryscale.normalscale": "Normal GUI Scale",
   "option.skyblockhelpers.inventoryscale.normalscale.tooltip": "Normal Gameplay GUI Scale",
-  "option.skyblockhelpers.inventoryscale.containerscale": "Container Scale",
+  "option.skyblockhelpers.inventoryscale.containerscale": "Container GUI Scale",
   "option.skyblockhelpers.inventoryscale.containerscale.tooltip": "Chest / Inventory GUI Scale",
   
 

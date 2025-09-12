@@ -63,6 +63,9 @@ public class Config {
        
         hud.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
         
+        hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.inventoryscale.enabled"), InventoryScale.enabled).setDefaultValue(false)
+        .setTooltip(Text.translatable("option.skyblockhelpers.inventoryscale.enabled.tooltip")).setSaveConsumer(newValue -> InventoryScale.enabled = newValue).build());
+        
         hud.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.inventoryscale.normalscale"), InventoryScale.normalScale, 0, 4).setDefaultValue(2)
         .setTooltip(Text.translatable("option.skyblockhelpers.inventoryscale.normalscale.tooltip")).setSaveConsumer(newValue -> InventoryScale.normalScale = newValue).build());
         
@@ -232,16 +235,23 @@ public class Config {
             PressureWarning.enabled = data.pressureWarningEnabled;
             PressureWarning.Y_Level = data.pressureWarningY;
             PressureWarning.volume = data.pressureWarningVol;
+
+            InventoryScale.enabled = data.inventoryScaleEnabled;
             InventoryScale.normalScale = data.inventoryNormalScale;
             InventoryScale.customScale = data.inventoryCustomScale;
+
             SmallHand.enabled = data.smallHandEnabled;
             SmallHand.size = data.smallHandSize;
+
             Clock.enabled = data.clockEnabled;
             Clock.utcOffset = data.clockUTCOffset;
+
             CleanTooltip.enabled = data.cleanTooltipEnabled;
             CleanTooltip.removeEmpty = data.cleanTooltipRemoveEmpty;
             CleanTooltip.cleanDrills = data.cleanTooltipCleanDrills;
+
             AutoSkyblock.enabled = data.autoSkyblockEnabled;
+
             SlowHand.enabled = data.slowHandEnabled;
             SlowHand.speed = data.slowHandSpeed;
             
@@ -292,21 +302,27 @@ public class Config {
         try {
             Files.createDirectories(CONFIG_FILE.getParent());
 
-            // Copy from helpers into serializable object
             SerializableConfig data = new SerializableConfig();
             data.pressureWarningEnabled = PressureWarning.enabled;
             data.pressureWarningY = PressureWarning.Y_Level;
             data.pressureWarningVol = PressureWarning.volume;
+
+            data.inventoryScaleEnabled = InventoryScale.enabled;
             data.inventoryNormalScale = InventoryScale.normalScale;
             data.inventoryCustomScale = InventoryScale.customScale;
+
             data.smallHandEnabled = SmallHand.enabled;
             data.smallHandSize = SmallHand.size;
+
             data.clockEnabled = Clock.enabled;
             data.clockUTCOffset = Clock.utcOffset;
+
             data.cleanTooltipEnabled = CleanTooltip.enabled;
             data.cleanTooltipRemoveEmpty = CleanTooltip.removeEmpty;
             data.cleanTooltipCleanDrills = CleanTooltip.cleanDrills;
+
             data.autoSkyblockEnabled = AutoSkyblock.enabled;
+
             data.slowHandEnabled = SlowHand.enabled;
             data.slowHandSpeed = SlowHand.speed;
 

@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 
 public class InventoryScale {
 
+    public static boolean enabled = false;
     public static int normalScale = 2;
     public static int customScale = 3;
     private static boolean applied = false;
@@ -16,7 +17,7 @@ public class InventoryScale {
 
     public static void init() {
         WorldRenderEvents.START.register(ctx -> {
-            if (client.world == null) return;
+            if (client.world == null || !enabled) return;
 
             Screen screen = client.currentScreen;
 
@@ -46,9 +47,5 @@ public class InventoryScale {
             client.onResolutionChanged();
             applied = false;
         }
-    }
-
-    public static void setCustomScale(int scale) {
-        customScale = scale;
     }
 }

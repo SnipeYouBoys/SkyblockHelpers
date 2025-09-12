@@ -5,6 +5,7 @@ public class SerializableConfig {
     int pressureWarningY = 77;
     int pressureWarningVol = 100;
 
+    boolean inventoryScaleEnabled = false;
     int inventoryNormalScale = 2;
     int inventoryCustomScale = 3;
 
