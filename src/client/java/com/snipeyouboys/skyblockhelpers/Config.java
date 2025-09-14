@@ -6,6 +6,7 @@ import com.snipeyouboys.skyblockhelpers.Helpers.AutoSkyblock;
 import com.snipeyouboys.skyblockhelpers.Helpers.CleanTooltip;
 import com.snipeyouboys.skyblockhelpers.Helpers.Clock;
 import com.snipeyouboys.skyblockhelpers.Helpers.CommissionOverlay;
+import com.snipeyouboys.skyblockhelpers.Helpers.DungeonHud;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryOverlay;
 import com.snipeyouboys.skyblockhelpers.Helpers.InventoryScale;
 import com.snipeyouboys.skyblockhelpers.Helpers.PressureWarning;
@@ -218,6 +219,14 @@ public class Config {
         .setTooltip(Text.translatable("option.skyblockhelpers.commissionoverlay.enabled.tooltip")).setSaveConsumer(newValue -> CommissionOverlay.enabled = newValue).build());
 
 
+
+
+        hud.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.dungeonhud.enabled"), DungeonHud.enabled).setDefaultValue(true)
+        .setTooltip(Text.translatable("option.skyblockhelpers.dungeonhud.enabled.tooltip")).setSaveConsumer(newValue -> DungeonHud.enabled = newValue).build());
+
+
         
         
         builder.setSavingRunnable(() -> {
@@ -292,6 +301,8 @@ public class Config {
 
             CommissionOverlay.enabled = data.commissionOverlayEnabled;
 
+            DungeonHud.enabled = data.dungeonHudEnabled;
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -362,6 +373,8 @@ public class Config {
             data.shellwiseHighlightRadius = ShellwiseHighlight.radius;
 
             data.commissionOverlayEnabled = CommissionOverlay.enabled;
+
+            data.dungeonHudEnabled = DungeonHud.enabled;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);

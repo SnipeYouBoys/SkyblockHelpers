@@ -60,4 +60,6 @@ public class SerializableConfig {
     int shellwiseHighlightRadius = 20;
 
     boolean commissionOverlayEnabled = true;
+
+    boolean dungeonHudEnabled = true;
 }

@@ -56,7 +56,7 @@ public class CommissionOverlay {
             List<String> commissions = new ArrayList<>();
             for (PlayerListEntry entry : entries) {
                 String line = entry.getDisplayName() != null ? entry.getDisplayName().getString() : entry.getProfile().getName();
-                if ((line.contains("%"))) {
+                if ((line.contains("%")) || (line.contains("DONE"))) {
                     boolean found = commissionStrings.stream().anyMatch(string -> line.toLowerCase().contains(string.toLowerCase()));
                     if (found) {
                         commissions.add(line);
@@ -66,13 +66,17 @@ public class CommissionOverlay {
 
             int padding = 2;
             int yStart = 32;
-            int x = 1;
+            int x = 2;
             int height = client.textRenderer.fontHeight;
 
             for (int i = 0; i < commissions.size(); i++) {
                 String line = commissions.get(i);
                 int y = yStart + ((padding + height) * (i + 1));
-                drawContext.drawTextWithShadow(client.textRenderer, line, x, y, 0xFFFFFFFF);
+                int colour = 0xFFFFFFFF;
+                if (line.contains("DONE")) {
+                    colour = 0xFF90FF90;
+                }
+                drawContext.drawTextWithShadow(client.textRenderer, line.trim(), x, y, colour);
             }
         });
     }

@@ -130,6 +130,9 @@
   "option.skyblockhelpers.commissionoverlay.enabled": "Commisions Overlay",
   "option.skyblockhelpers.commissionoverlay.enabled.tooltip": "Show Dwarven Mines / Crystal Hollows / Glacite Tunnels commissions on screen",
 
+  "option.skyblockhelpers.dungeonhud.enabled": "Show Dungeon HUD",
+  "option.skyblockhelpers.dungeonhud.enabled.tooltip": "Show helpful info on screen when in dungeons",
+
   
 
   "key.skyblockhelpers.findernewangle": "New Angle For Finder",

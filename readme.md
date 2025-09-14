@@ -17,3 +17,4 @@ SkyblockHelpers is a fabric mod that includes some useful helpers for Hypixel Sk
 - InventoryOverlay: Shows all items in your inventory even when the inventory is closed.
 - CommissionOverlay: Shows your commissions on screen.
 - ShellwiseHighlight: Highlights Shellwise on Galatea to make them easier to see.
+- DungeonHUD: Shows some helpful info on screen when in dungeons.
