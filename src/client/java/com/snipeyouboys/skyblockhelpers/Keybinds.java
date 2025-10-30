@@ -4,18 +4,26 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;
 
 import org.lwjgl.glfw.GLFW;
 
 import com.snipeyouboys.skyblockhelpers.Helpers.Finder;
 import com.snipeyouboys.skyblockhelpers.Helpers.MouseLock;
+import com.snipeyouboys.skyblockhelpers.Helpers.VolumeHotkeys;
 
 public class Keybinds {
 
     // KeyBinding instances
     private static KeyBinding finderNewAngleKey;
     private static KeyBinding lockMouseKey;
+
+    // audio hotkeys
+    private static KeyBinding volume1Key;
+    private static KeyBinding volume2Key;
+    private static KeyBinding volume3Key;
+    private static KeyBinding volume4Key;
     
     //echest + backpack keys (different formatting for less clutter)
     private static KeyBinding echest1Key; private static KeyBinding echest2Key; private static KeyBinding echest3Key;
@@ -28,6 +36,8 @@ public class Keybinds {
     private static KeyBinding backpack10Key; private static KeyBinding backpack11Key; private static KeyBinding backpack12Key;
     private static KeyBinding backpack13Key; private static KeyBinding backpack14Key; private static KeyBinding backpack15Key;
     private static KeyBinding backpack16Key; private static KeyBinding backpack17Key; private static KeyBinding backpack18Key;
+
+
 
     public static void init() {
         finderNewAngleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
@@ -42,6 +52,20 @@ public class Keybinds {
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_L,
             "category.skyblockhelpers"
+        ));
+
+        //audio kotkeys
+        volume1Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.skyblockhelpers.volume1", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "category.skyblockhelpers"
+        ));
+        volume2Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.skyblockhelpers.volume2", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "category.skyblockhelpers"
+        ));
+        volume3Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.skyblockhelpers.volume3", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "category.skyblockhelpers"
+        ));
+        volume4Key = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.skyblockhelpers.volume4", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "category.skyblockhelpers"
         ));
 
         //echest + backpack keys (different formatting for less clutter)
@@ -74,6 +98,8 @@ public class Keybinds {
         backpack17Key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.skyblockhelpers.backpack17", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "category.skyblockhelpers"));
         backpack18Key = KeyBindingHelper.registerKeyBinding(new KeyBinding("key.skyblockhelpers.backpack18", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_UNKNOWN, "category.skyblockhelpers"));
 
+
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
         
             if (finderNewAngleKey.wasPressed()) {
@@ -87,6 +113,36 @@ public class Keybinds {
                     client.player.sendMessage(Text.literal("§7Locked Player Rotation"), false);
                 }
                 MouseLock.enabled = !MouseLock.enabled;
+            }
+
+            //volume hotkeys
+            if (volume1Key.wasPressed()) {
+                double targetVolume = (double) VolumeHotkeys.hotkey1Volume/100;
+                if (targetVolume > 1){targetVolume = 1;}
+                if (targetVolume < 0){targetVolume = 0;}
+                client.options.getSoundVolumeOption(SoundCategory.MASTER).setValue(targetVolume); client.options.write();
+                client.player.sendMessage(Text.literal("§7Set Master Volume To §9" + Long.toString(Math.round(targetVolume*100)) + "%"), false);
+            }
+            if (volume2Key.wasPressed()) {
+                double targetVolume = (double) VolumeHotkeys.hotkey2Volume/100;
+                if (targetVolume > 1){targetVolume = 1;}
+                if (targetVolume < 0){targetVolume = 0;}
+                client.options.getSoundVolumeOption(SoundCategory.MASTER).setValue(targetVolume); client.options.write();
+                client.player.sendMessage(Text.literal("§7Set Master Volume To §9" + Long.toString(Math.round(targetVolume*100)) + "%"), false);
+            }
+            if (volume3Key.wasPressed()) {
+                double targetVolume = (double) VolumeHotkeys.hotkey3Volume/100;
+                if (targetVolume > 1){targetVolume = 1;}
+                if (targetVolume < 0){targetVolume = 0;}
+                client.options.getSoundVolumeOption(SoundCategory.MASTER).setValue(targetVolume); client.options.write();
+                client.player.sendMessage(Text.literal("§7Set Master Volume To §9" + Long.toString(Math.round(targetVolume*100)) + "%"), false);
+            }
+            if (volume4Key.wasPressed()) {
+                double targetVolume = (double) VolumeHotkeys.hotkey4Volume/100;
+                if (targetVolume > 1){targetVolume = 1;}
+                if (targetVolume < 0){targetVolume = 0;}
+                client.options.getSoundVolumeOption(SoundCategory.MASTER).setValue(targetVolume); client.options.write();
+                client.player.sendMessage(Text.literal("§7Set Master Volume To §9" + Long.toString(Math.round(targetVolume*100)) + "%"), false);
             }
             
             //echest + backpack commands (different formatting for less clutter)

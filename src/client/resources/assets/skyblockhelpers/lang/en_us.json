@@ -133,10 +133,26 @@
   "option.skyblockhelpers.dungeonhud.enabled": "Show Dungeon HUD",
   "option.skyblockhelpers.dungeonhud.enabled.tooltip": "Show helpful info on screen when in dungeons",
 
+
+  "option.skyblockhelpers.volumehotkeys.volume1": "Volume hotkey 1",
+  "option.skyblockhelpers.volumehotkeys.volume1.tooltip": "Set volume hotkey preset 1 (%)",
+  "option.skyblockhelpers.volumehotkeys.volume2": "Volume hotkey 2",
+  "option.skyblockhelpers.volumehotkeys.volume2.tooltip": "Set volume hotkey preset 2 (%)",
+  "option.skyblockhelpers.volumehotkeys.volume3": "Volume hotkey 3",
+  "option.skyblockhelpers.volumehotkeys.volume3.tooltip": "Set volume hotkey preset 3 (%)",
+  "option.skyblockhelpers.volumehotkeys.volume4": "Volume hotkey 4",
+  "option.skyblockhelpers.volumehotkeys.volume4.tooltip": "Set volume hotkey preset 4 (%)",
+
   
 
   "key.skyblockhelpers.findernewangle": "New Angle For Finder",
   "key.skyblockhelpers.lockmouse": "Lock/Unlock Player Rotation",
+  
+  "key.skyblockhelpers.volume1": "Set Volume To Preset 1",
+  "key.skyblockhelpers.volume2": "Set Volume To Preset 2",
+  "key.skyblockhelpers.volume3": "Set Volume To Preset 3",
+  "key.skyblockhelpers.volume4": "Set Volume To Preset 4",
+
   "key.skyblockhelpers.echest1": "Open Ender Chest Page 1",
   "key.skyblockhelpers.echest2": "Open Ender Chest Page 2",
   "key.skyblockhelpers.echest3": "Open Ender Chest Page 3",

@@ -14,6 +14,7 @@ import com.snipeyouboys.skyblockhelpers.Helpers.ShellwiseHighlight;
 import com.snipeyouboys.skyblockhelpers.Helpers.SlowHand;
 import com.snipeyouboys.skyblockhelpers.Helpers.SmallHand;
 import com.snipeyouboys.skyblockhelpers.Helpers.StorageRename;
+import com.snipeyouboys.skyblockhelpers.Helpers.VolumeHotkeys;
 
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
@@ -226,6 +227,23 @@ public class Config {
         hud.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.skyblockhelpers.dungeonhud.enabled"), DungeonHud.enabled).setDefaultValue(true)
         .setTooltip(Text.translatable("option.skyblockhelpers.dungeonhud.enabled.tooltip")).setSaveConsumer(newValue -> DungeonHud.enabled = newValue).build());
 
+        
+
+
+        misc.addEntry(entryBuilder.startSubCategory(Text.translatable("blank")).build());
+        
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.volumehotkeys.volume1"), VolumeHotkeys.hotkey1Volume, 0, 100).setDefaultValue(0)
+        .setTooltip(Text.translatable("option.skyblockhelpers.volumehotkeys.volume1.tooltip")).setSaveConsumer(newValue -> VolumeHotkeys.hotkey1Volume = newValue).build());
+
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.volumehotkeys.volume2"), VolumeHotkeys.hotkey2Volume, 0, 100).setDefaultValue(5)
+        .setTooltip(Text.translatable("option.skyblockhelpers.volumehotkeys.volume2.tooltip")).setSaveConsumer(newValue -> VolumeHotkeys.hotkey2Volume = newValue).build());
+
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.volumehotkeys.volume3"), VolumeHotkeys.hotkey3Volume, 0, 100).setDefaultValue(25)
+        .setTooltip(Text.translatable("option.skyblockhelpers.volumehotkeys.volume3.tooltip")).setSaveConsumer(newValue -> VolumeHotkeys.hotkey3Volume = newValue).build());
+
+        misc.addEntry(entryBuilder.startIntSlider(Text.translatable("option.skyblockhelpers.volumehotkeys.volume4"), VolumeHotkeys.hotkey4Volume, 0, 100).setDefaultValue(100)
+        .setTooltip(Text.translatable("option.skyblockhelpers.volumehotkeys.volume4.tooltip")).setSaveConsumer(newValue -> VolumeHotkeys.hotkey4Volume = newValue).build());
+
 
         
         
@@ -303,6 +321,10 @@ public class Config {
 
             DungeonHud.enabled = data.dungeonHudEnabled;
 
+            VolumeHotkeys.hotkey1Volume = data.volumeHotkey1;
+            VolumeHotkeys.hotkey2Volume = data.volumeHotkey2;
+            VolumeHotkeys.hotkey3Volume = data.volumeHotkey3;
+            VolumeHotkeys.hotkey4Volume = data.volumeHotkey4;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -375,6 +397,11 @@ public class Config {
             data.commissionOverlayEnabled = CommissionOverlay.enabled;
 
             data.dungeonHudEnabled = DungeonHud.enabled;
+
+            data.volumeHotkey1 = VolumeHotkeys.hotkey1Volume;
+            data.volumeHotkey2 = VolumeHotkeys.hotkey2Volume;
+            data.volumeHotkey3 = VolumeHotkeys.hotkey3Volume;
+            data.volumeHotkey4 = VolumeHotkeys.hotkey4Volume;
 
             String json = GSON.toJson(data);
             Files.writeString(CONFIG_FILE, json);

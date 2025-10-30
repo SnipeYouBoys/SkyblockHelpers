@@ -62,4 +62,9 @@ public class SerializableConfig {
     boolean commissionOverlayEnabled = true;
 
     boolean dungeonHudEnabled = true;
+
+    int volumeHotkey1 = 0;
+    int volumeHotkey2 = 5;
+    int volumeHotkey3 = 25;
+    int volumeHotkey4 = 100;
 }
